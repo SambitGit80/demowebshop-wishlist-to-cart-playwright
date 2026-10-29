@@ -46,3 +46,4 @@ npm run typecheck
   actions, looked up in Books and then Digital downloads. In practice this is currently "3rd Album".
 - Quantity 2 is applied to the first cart line.
 # demowebshop-wishlist-to-cart-playwright
+# demowebshop-wishlist-to-cart-playwright
