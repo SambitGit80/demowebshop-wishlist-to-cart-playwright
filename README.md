@@ -45,3 +45,4 @@ npm run typecheck
   can be wishlisted but cannot be moved to the cart). So the second item is the first product that supports both
   actions, looked up in Books and then Digital downloads. In practice this is currently "3rd Album".
 - Quantity 2 is applied to the first cart line.
+# demowebshop-wishlist-to-cart-playwright
