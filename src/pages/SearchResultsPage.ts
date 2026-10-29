@@ -1,11 +1,4 @@
 import { Locator, Page } from '@playwright/test';
-import { parsePrice } from '../utils/testData';
-
-export interface Product {
-  name: string;
-  unitPrice: number;
-}
-
 export class SearchResultsPage {
   readonly productItems: Locator;
 
@@ -17,11 +10,8 @@ export class SearchResultsPage {
     await this.productItems.nth(index).locator('.product-title a').click();
   }
 
-  async productNameAt(index: number): Promise<string> {
-    return (await this.productItems.nth(index).locator('.product-title a').innerText()).trim();
-  }
-
-  async priceAt(index: number): Promise<number> {
-    return parsePrice(await this.productItems.nth(index).locator('.prices .actual-price').innerText());
+  async productNames(): Promise<string[]> {
+    const names = await this.productItems.locator('.product-title a').allInnerTexts();
+    return names.map((name) => name.trim());
   }
 }

@@ -19,7 +19,7 @@ export class CartPage {
   constructor(private readonly page: Page) {
     this.rows = page.locator('table.cart tbody tr.cart-item-row');
     this.updateCartButton = page.locator('input[name="updatecart"]');
-    this.subtotal = page.locator('.cart-total .order-subtotal .product-price').first();
+    this.subtotal = page.locator('.cart-total tr', { hasText: 'Sub-Total' }).locator('td').last();
     this.couponInput = page.locator('input[name="discountcouponcode"]');
     this.applyCouponButton = page.locator('input[name="applydiscountcouponcode"]');
     this.couponMessage = page.locator('.coupon-box .message');
